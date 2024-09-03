@@ -3,5 +3,5 @@ COPY . .
 RUN mvn -B clean package -DskipTests
 
 FROM openjdk:17
-COPY --from=build target/*.jar my_app.jar
-ENTRYPOINT ["java", "-jar","-Dserver.port=8080","my_app.jar"]
+COPY --from=build target/*.jar works_app.jar
+ENTRYPOINT ["java", "-jar","-Dserver.port=8080","works_app.jar"]
